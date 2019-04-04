@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const userRouter = require('./routes/api/user.routes');
 const accountRouter = require('./routes/api/account.routes');
-const categoryRouter = require('./routes/api/account.routes');
+const categoryRouter = require('./routes/api/category.routes');
 require('./models/Expense');
 
 const app = express();
