@@ -1,8 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const path = require('path');
 const userRouter = require('./routes/api/user.routes');
 const accountRouter = require('./routes/api/account.routes');
 require('./models/Expense');
@@ -42,7 +42,8 @@ app.use ('/api/users', userRouter);
 app.use ('/api/accounts', accountRouter);
 
 
-//Serve static assets if in production
+/*
+Remove service frontend
 if(process.env.NODE_ENV === 'production'){
     //Set Static folder
     app.use(express.static('client/build'));
@@ -50,10 +51,10 @@ if(process.env.NODE_ENV === 'production'){
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
 }
-
+*/
 /**
  * START AND LISTEN
  */
 //Send to config
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 app.listen(port, ()=> console.log (`Server running on port ${port}`));
