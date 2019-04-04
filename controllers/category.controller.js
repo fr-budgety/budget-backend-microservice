@@ -1,5 +1,5 @@
-const Category = require('../../models/Category');
-const validateCategoryCreationInput = require('../../validation/categories/category-creation');
+const Category = require('../models/Category');
+const validateCategoryCreationInput = require('../validation/categories/category-creation');
 
 
 // @route   GET api/categories/test
