@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const userRouter = require('./routes/api/user.routes');
 const accountRouter = require('./routes/api/account.routes');
+const categoryRouter = require('./routes/api/account.routes');
 require('./models/Expense');
 
 const app = express();
@@ -40,6 +41,7 @@ require('./config/passport')(passport);
 //Basic routes
 app.use ('/api/users', userRouter);
 app.use ('/api/accounts', accountRouter);
+app.use ('/api/categories', categoryRouter);
 
 
 /*
