@@ -2,17 +2,13 @@ const newIcons = [
     {
         name: 'custom 1',
         type: 'expense',
-        icon: 'clothes'
+        icon: 'beauty'
     },
     {
         name: 'custom 2',
         type: 'income',
-        icon: 'entertainment'
+        icon: 'beauty'
     },
-
-    
-    
-    
 ];
 
 module.exports = newIcons;
