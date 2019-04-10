@@ -27,13 +27,10 @@ exports.get_categories =  (req, res) => {
 }
 
 // @route   POST api/categories
-// @desc    Add New Category or Edit if :id is supplied
+// @desc    Add New Category
 // @access  Private
 exports.add_category = (req, res) => {
-    const {
-        errors,
-        isValid
-    } = validateCategoryCreationInput(req.body);
+    const { errors, isValid } = validateCategoryCreationInput(req.body);
     if (!isValid) {
         return res.status(400).json(errors);
     }
@@ -50,24 +47,35 @@ exports.add_category = (req, res) => {
                 errors.name = 'The category name already exists'
                 return res.status(400).json(errors)
             } else {
-                Category.findOne({
-                    _id: req.body.id
-                })
-                .then(itemUpdate => {
-                    if(itemUpdate){
-                        console.log('updating element');
-                        Category.findOneAndUpdate({ _id: req.body.id }, {$set: categoryFields}, {new: false})
-                        .then(category=> res.json(category))
-                        .catch(err => console.log('Unable to update the category: ', err)) 
-                    } else {
-                        console.log('creating category');
-
-                        new Category(categoryFields).save().then(category => res.json(category));
-                    }
-                })
+                new Category(categoryFields).save().then(category => res.json(category));
             }
         })
 }
+
+
+// @route   POST api/category/:id
+// @desc    Edit if :id is supplied
+// @access  Private
+exports.edit_category = (req, res) => {
+    const { errors, isValid } = validateCategoryCreationInput(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+    //Fill with fields
+    const categoryFields = {};
+    categoryFields.user = req.user.id;
+    categoryFields.id = req.params.id;
+    if (req.body.name) categoryFields.name = req.body.name;
+    if (req.body.type) categoryFields.type = req.body.type;
+    if (req.body.icon) categoryFields.icon = req.body.icon
+    //Find Category and update it
+   Category.findOneAndUpdate({_id: categoryFields.id}, {$set: categoryFields}, {new: true})
+    .then(category => {
+        res.json(category)}
+    ).catch(err => console.log('Unable to update the category: ', err));
+}
+
+
 
 // @route   DELETE api/categories/:id
 // @desc    Delete a category by id
@@ -107,4 +115,21 @@ exports.get_category = (req, res) => {
         })
         .catch(err => res.status(404).json(err));
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

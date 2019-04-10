@@ -1,9 +1,3 @@
-const bcrypt = require('bcryptjs');
-const gravatar = require('gravatar');
-const jwt = require('jsonwebtoken');
-const keys = require('../config/keys');
-//Load default icons
-const defaultIcons = require('../util/categoryIcons');
 //Load Input validation
 const validateAccountCreationInput = require('../validation/accounts/account-creation');
 const Account = require('../models/Account');

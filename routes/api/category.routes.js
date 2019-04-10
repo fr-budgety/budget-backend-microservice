@@ -28,10 +28,10 @@ router.get('/', passportJWT, category.get_categories);
 // @access  Private
 router.delete('/:id', passportJWT, category.delete_category);
 
-// @route   GET api/category/:id
-// @desc    Get a category by id
+// @route   POST api/category/:id
+// @desc    Edit a category
 // @access  Private
-router.get('/:id', passportJWT, category.get_category);
+router.post('/:id', passportJWT, category.edit_category);
 
 
 module.exports = router;
