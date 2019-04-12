@@ -2,77 +2,77 @@ const defaultIcons = [
     {
         name: 'bills',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'bills'
     },
     {
         name: 'transports',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'transports'
     },
     {
         name: 'house',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'house'
     },
     {
         name: 'car',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'car'
     },
     {
         name: 'entertainment',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'entertainment'
     },
     {
         name: 'shopping',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'shopping'
     },
     {
         name: 'clothes',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'clothes'
     },
     {
         name: 'insurances',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'insurances'
     },
     {
         name: 'taxes',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'taxes'
     },
     {
         name: 'phone',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'phone'
     },
     {
         name: 'tobaccos',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'tobaccos'
     },
     {
         name: 'health',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'health'
     },
     {
         name: 'sport',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'sport'
     },
     {
         name: 'children',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'children'
     },
     {
         name: 'pets',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'pets'
     },
     {
         name: 'beauty',
@@ -82,87 +82,87 @@ const defaultIcons = [
     {
         name: 'electronics',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'electronics'
     },
     {
         name: 'food',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'food'
     },
     {
         name: 'drinks',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'drinks'
     },
     {
         name: 'snacks',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'snacks'
     },
     {
         name: 'gifts',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'gifts'
     },
     {
         name: 'social',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'social'
     },
     {
         name: 'travels',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'travels'
     },
     {
         name: 'education',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'education'
     },
     {
         name: 'books',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'books'
     },
     {
         name: 'office',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'office'
     },
     {
         name: 'other',
         type: 'expense',
-        icon: 'beauty'
+        icon: 'other'
     },
     {
         name: 'paycheck',
         type: 'income',
-        icon: 'other'
+        icon: 'paycheck'
     },
     {
         name: 'bonus',
         type: 'income',
-        icon: 'other'
+        icon: 'bonus'
     },
     {
         name: 'sales',
         type: 'income',
-        icon: 'other'
+        icon: 'sales'
     },
     {
         name: 'bonus',
         type: 'income',
-        icon: 'other'
+        icon: 'bonus'
     },
     {
         name: 'lottery',
         type: 'income',
-        icon: 'other'
+        icon: 'lottery'
     },
     {
         name: 'investments',
         type: 'income',
-        icon: 'other'
+        icon: 'investments'
     },
     {
         name: 'others',
