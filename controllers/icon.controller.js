@@ -1,6 +1,8 @@
 const Icon = require('../models/Icon');
 const newIcons = require('../util/icons');
-require('../util/IconsFetcher');
+const IconFetcher = require('../util/IconsFetcher');
+const EXPENSE_ICONS_PATH = './assets/icons/expense';
+const INCOME_ICONS_PATH = './assets/icons/income';
 
 // @route   GET api/icons/test
 // @desc    Test user router
@@ -32,16 +34,21 @@ exports.get_icons =  (req, res) => {
 exports.add_icon = (req, res) => {
        //Fill with fields
        const iconFields = {};
+       const expenseIcons = new IconFetcher (EXPENSE_ICONS_PATH);
+       const incomeIcons = new IconFetcher (EXPENSE_ICONS_PATH);
        Icon.remove();
-       let loadingIcons = new Promise ((resolve, rejection)=>{ 
-           newIcons.map (icon => {
-               iconFields.name = icon.name;
-               iconFields.type = icon.type;
-               iconFields.icon = icon.icon;
+       let expenseIconsPromise = new Promise ((resolve, rejection)=>{ 
+           expenseIcons.map (icon => {
+               let counter = 0;
+               const iconFields = {
+                   name: `custom expense ${counter}`,
+                   type: 'expense',
+                   icon
+               }
                new Icon(iconFields).save();
            })
        });
-       loadingIcons.then(res.json({success: 'Icon filled'}))
+       expenseIconsPromise.then(res.json({success: 'Expense Icon filled'}))
        .catch(res.json({err: 'Error filling icon collection'}));
 }
 
