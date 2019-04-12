@@ -1,5 +1,6 @@
 const Icon = require('../models/Icon');
 const newIcons = require('../util/icons');
+require('../util/IconsFetcher');
 
 // @route   GET api/icons/test
 // @desc    Test user router

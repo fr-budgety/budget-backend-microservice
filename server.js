@@ -7,6 +7,7 @@ const userRouter = require('./routes/api/user.routes');
 const accountRouter = require('./routes/api/account.routes');
 const categoryRouter = require('./routes/api/category.routes');
 const iconRouter = require('./routes/api/icon.routes');
+require('./util/IconsFetcher');
 require('./models/Expense');
 
 const app = express();
@@ -16,7 +17,6 @@ const app = express();
 //Body Parser
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
 
 /**
  * MONGO DB CONNECTION

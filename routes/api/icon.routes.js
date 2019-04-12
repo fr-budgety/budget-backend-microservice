@@ -6,7 +6,6 @@ const router = express.Router();
 const icon = require ('../../controllers/icon.controller');
 //Declare function for private authentication management
 const passportJWT = passport.authenticate('jwt', { session: false });
-console.log('loaded')
 // @route   GET api/icons/test
 // @desc    Test icon router
 // @access  Public
