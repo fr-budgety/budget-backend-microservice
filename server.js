@@ -7,6 +7,7 @@ const userRouter = require('./routes/api/user.routes');
 const accountRouter = require('./routes/api/account.routes');
 const categoryRouter = require('./routes/api/category.routes');
 const iconRouter = require('./routes/api/icon.routes');
+const expenseRouter = require('./routes/api/expense.routes');
 require('./models/Expense');
 
 const app = express();
@@ -44,6 +45,7 @@ app.use ('/api/users', userRouter);
 app.use ('/api/accounts', accountRouter);
 app.use ('/api/categories', categoryRouter);
 app.use ('/api/icons', iconRouter);
+app.use ('/api/expenses', expenseRouter);
 
 
 /*
