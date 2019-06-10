@@ -23,7 +23,7 @@ module.exports = function validateExpenseCreationInput(data) {
         errors.startingBalance = 'Amount must be a number';
     }
     if (Validator.isEmpty(data.date)) {
-        errors.amount = 'Select a date';
+        errors.date = 'Date is required';
     }
     if (!Validator.isISO8601(data.date)) {
         errors.date = 'Date is in the wrong format';

@@ -33,10 +33,12 @@ const ExpenseSchema = new Schema({
     },
     date: {
         type: Date,
-        required: true
+        required: true,
+        default: Date.now
     },
     description: {
-        type: String
+        type: String,
+        default: 'No Description'
     },
     beneficiary: {
         type: String
