@@ -35,6 +35,7 @@ exports.add_account = (req, res) => {
                 new Account(accountFields).save().then(account => res.json(account));
             }
         })
+        .catch(err=>res.status(400).json(errors))
 }
 // @route   POST api/accounts/edit/:id
 // @desc    Edit if :id is supplied

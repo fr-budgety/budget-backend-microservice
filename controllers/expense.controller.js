@@ -31,7 +31,7 @@ exports.add_expense = (req, res) => {
     if (req.body.beneficiary) expenseFields.beneficiary = req.body.beneficiary;
 
     //Create new Expense
-    new Expense(expenseFields).save().then(expense => res.json(expense));
+    new Expense(expenseFields).save().then(expense => res.json(expense)).catch(errors => res.status(400).json(errors));
 }
 
 // @route   GET api/expenses
@@ -39,9 +39,7 @@ exports.add_expense = (req, res) => {
 // @access  Private
 exports.get_expenses =  (req, res) => {
     const errors = {};
-    Expense.find({
-            user: req.user.id
-        })
+    Expense.find({ user: req.user.id })
         .then(expense => {
             if (expense.length === 0) {
                 errors.name = 'You have no expenses'
@@ -49,4 +47,5 @@ exports.get_expenses =  (req, res) => {
             }
             return res.json(expense)
         })
+        .catch(errors => res.status(400).json(errors))
 }

@@ -10,13 +10,11 @@ const ExpenseSchema = new Schema({
         required: true
     },
     account: {
-        type: Schema.Types.ObjectId,
-        ref: 'accounts',
+        type: String,
         required: true
     },
     category: {
-        type: Schema.Types.ObjectId,
-        ref: 'categories',
+        type: String,
         required: true
     },
     createdAt: {
