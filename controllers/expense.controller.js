@@ -49,3 +49,22 @@ exports.get_expenses =  (req, res) => {
         })
         .catch(errors => res.status(400).json(errors))
 }
+
+// @route   DELETE api/expenses/:id
+// @desc    Delete an expense by id
+// @access  Private
+exports.delete_expense = (req, res) => {
+    Expense.findById(req.params.id)
+        .then(expense => {
+            //Check for expense owner
+            if (expense.user.toString() !== req.user.id) {
+                return res.status(401).json({
+                    notauthorized: 'User not authorized'
+                })
+            }
+            //Delete
+            expense.remove().then(() => res.json({
+                success: true
+            })).catch(errors => res.status(400).json(errors));
+        }).catch(errors => res.status(400).json(errors))
+}

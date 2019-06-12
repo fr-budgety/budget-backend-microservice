@@ -22,4 +22,9 @@ router.post('/', passportJWT, expense.add_expense);
 // @access  Private
 router.get('/', passportJWT, expense.get_expenses);
 
+// @route   DELETE api/expenses/:id
+// @desc    Delete a category by id
+// @access  Private
+router.delete('/:id', passportJWT, expense.delete_expense);
+
 module.exports = router;
